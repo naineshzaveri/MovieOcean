@@ -28,12 +28,13 @@ public class MoviePosterAdapter extends Adapter<ViewHolder> {
         public TextView txtMovieName;
         public ImageView ivMoviePoster;
         public CardView cvContent;
-
+        public android.widget.ProgressBar progressBar;
         public MoviePosterViewHolder(android.view.View v) {
             super(v);
             txtMovieName = (TextView) v.findViewById(R.id.txtMovieName);
             ivMoviePoster = (ImageView) v.findViewById(R.id.ivPoster);
             cvContent = (CardView) v.findViewById(R.id.cvMoviePoster);
+            progressBar = (android.widget.ProgressBar) v.findViewById(ocean.movie.com.movieocean.R.id.progressBar);
         }
     }
 
@@ -47,10 +48,9 @@ public class MoviePosterAdapter extends Adapter<ViewHolder> {
     public void onBindViewHolder(final android.support.v7.widget.RecyclerView.ViewHolder viewHolder, int position) {
 
          MoviePosterAdapter.MoviePosterViewHolder holder = (MoviePosterAdapter.MoviePosterViewHolder) viewHolder;
-
          MovieModel movieModel = arrMovies.get(position);
         holder.txtMovieName.setText(movieModel.getTitle());
-        ocean.movie.com.movieocean.utils.BitmapUtils.setUrlImageUsingPicasso(mContext, movieModel.getPoster_path(), holder.ivMoviePoster);
+        ocean.movie.com.movieocean.utils.BitmapUtils.setUrlImageUsingPicasso(mContext, movieModel.getPoster_path(), holder.ivMoviePoster,holder.progressBar);
         holder.cvContent.setOnClickListener(new NextActivityListener(movieModel));
     }
 
@@ -67,6 +67,7 @@ public class MoviePosterAdapter extends Adapter<ViewHolder> {
 
     class NextActivityListener implements android.view.View.OnClickListener{
         MovieModel movieModel;
+
         NextActivityListener(MovieModel movieModel){
             this.movieModel = movieModel;
         }

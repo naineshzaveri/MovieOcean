@@ -6,11 +6,20 @@ package ocean.movie.com.movieocean.utils;
 public class BitmapUtils {
 
 
-    public static void setUrlImageUsingPicasso(android.content.Context context, String imagePath, android.widget.ImageView imageView) {
-
-        String imageUrl = ocean.movie.com.movieocean.helper.WebHelper.RequestUrl.IMAGE_URL+imagePath;
+    public static void setUrlImageUsingPicasso(android.content.Context context, String imagePath, android.widget.ImageView imageView, final android.widget.ProgressBar progressBar) {
+        progressBar.setVisibility(android.view.View.VISIBLE);
+        String imageUrl = ocean.movie.com.movieocean.helper.WebHelper.RequestUrl.IMAGE_URL + imagePath;
         try {
-            com.squareup.picasso.Picasso.with(context).load(imageUrl).error(android.R.drawable.stat_notify_error).into(imageView);
+            com.squareup.picasso.Picasso.with(context).load(imageUrl).error(android.R.drawable.stat_notify_error).into(imageView, new com.squareup.picasso.Callback() {
+                @Override
+                public void onSuccess() {
+                    progressBar.setVisibility(android.view.View.GONE);
+                }
+                @Override
+                public void onError() {
+                    progressBar.setVisibility(android.view.View.GONE);
+                }
+            });;
 
         } catch (Exception e) {
             e.printStackTrace();

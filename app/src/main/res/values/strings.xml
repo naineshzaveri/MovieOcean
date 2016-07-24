@@ -5,6 +5,9 @@
     <string name="movie_detail">Movie Detail</string>
 
 
+    <!-- error msgs -->
+    <string name="error_no_internet">Please connect to the internet</string>
+
     <string name="app_name">MovieOcean</string>
 
     <string name="hint_movie_name">Moview Name</string>

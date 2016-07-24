@@ -15,7 +15,7 @@ import ocean.movie.com.movieocean.models.MovieModel;
 
 ;
 
-public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseActivity {
+public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseActivity implements ocean.movie.com.movieocean.MovieManager.MovieValueListener {
 
     private android.support.v7.widget.RecyclerView.Adapter mAdapter;
     private android.support.v7.widget.RecyclerView mRecyclerView;
@@ -32,8 +32,15 @@ public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseAct
 
         init();
 
-        addDummy();
         setMoviePosterAdapter();
+        if(ocean.movie.com.movieocean.utils.NetworkUtil.checkNetworkAvailable(this)) {
+            showProgress(true);
+            ocean.movie.com.movieocean.MovieManager.getInstance().getMovieList(this);
+
+        }else{
+            showProgress(false);
+            android.widget.Toast.makeText(this,getResources().getString(R.string.error_no_internet), android.widget.Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void init(){
@@ -44,13 +51,12 @@ public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseAct
 
     private void setMoviePosterAdapter(){
 
-        if(modelArrayList.size() > 0) {
+        if(modelArrayList != null && modelArrayList.size() > 0) {
             if (mAdapter == null) {
                 mAdapter = new MoviePosterAdapter(MoviePosterActivity.this, modelArrayList);
                 mRecyclerView.setAdapter(mAdapter);
             } else {
                 mAdapter.notifyDataSetChanged();
-                ;
             }
             mRecyclerView.setVisibility(android.view.View.VISIBLE);
             txtEmptyView.setVisibility(android.view.View.GONE);
@@ -71,12 +77,7 @@ public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseAct
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == ocean.movie.com.movieocean.R.id.action_settings) {
             return true;
         }
@@ -84,13 +85,6 @@ public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseAct
         return super.onOptionsItemSelected(item);
     }
 
-    private void addDummy(){
-        for(int i=0; i< 5; i++) {
-            MovieModel movieModel = new MovieModel();
-            movieModel.setMovieTitle("movie-"+(i+1));
-            modelArrayList.add(movieModel);
-        }
-    }
     private void setGridProperties(){
         mRecyclerView.setLayoutManager(new android.support.v7.widget.GridLayoutManager(this,
                 NO_OF_COLUMNS, //The number of Columns in the grid
@@ -100,5 +94,31 @@ public class MoviePosterActivity extends ocean.movie.com.movieocean.base.BaseAct
         int spacing = 15; // 5px
         boolean includeEdge = true;
         mRecyclerView.addItemDecoration(new ocean.movie.com.movieocean.utils.GridSpacingItemDecoration(spanCount, spacing, includeEdge));
+    }
+
+    @Override
+    public void onReturnMovieList(java.util.List<ocean.movie.com.movieocean.models.MovieModel> movieModels) {
+        android.util.Log.i("RESULT",movieModels.get(0).getOriginal_title());
+        this.modelArrayList.addAll(movieModels);
+        showProgress(false);
+        setMoviePosterAdapter();
+    }
+
+    @Override
+    public void onReturnError(com.android.volley.VolleyError error) {
+
+        showProgress(false);
+        setMoviePosterAdapter();
+
+    }
+    private void showProgress(boolean show){
+        if(show){
+            mProgress.setVisibility(android.view.View.VISIBLE);
+            mRecyclerView.setVisibility(android.view.View.GONE);
+
+        }else{
+            mProgress.setVisibility(android.view.View.GONE);
+            mRecyclerView.setVisibility(android.view.View.VISIBLE);
+        }
     }
 }

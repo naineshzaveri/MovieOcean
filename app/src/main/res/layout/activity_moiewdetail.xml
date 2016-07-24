@@ -23,7 +23,7 @@
             <!-- header -->
 
             <ImageView
-
+                android:id="@+id/ivMovieImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/pad_100dp"
                 android:background="@drawable/ic_launcher"/>
@@ -79,6 +79,7 @@
                         android:text="@string/user_rating"/>
 
                     <TextView
+                        android:id="@+id/txtUserRatings"
                         style="@style/textview_details"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -98,6 +99,7 @@
                 android:text="@string/synopsis"/>
 
             <TextView
+                android:id="@+id/txtSynopsis"
                 style="@style/textview_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

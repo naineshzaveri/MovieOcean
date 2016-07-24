@@ -19,7 +19,6 @@ public class BaseActivity extends android.support.v7.app.AppCompatActivity {
 
     private String TAG;
 
-    public android.widget.ProgressBar mProgressbar;
 
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
@@ -173,14 +172,6 @@ public class BaseActivity extends android.support.v7.app.AppCompatActivity {
     protected void onPause() {
         super.onPause();
         isActivityVisible = false;
-    }
-
-    public void showProgress(boolean show) {
-        if (show) {
-            mProgressbar.setVisibility(android.view.View.VISIBLE);
-        } else {
-            mProgressbar.setVisibility(android.view.View.GONE);
-        }
     }
 
 }

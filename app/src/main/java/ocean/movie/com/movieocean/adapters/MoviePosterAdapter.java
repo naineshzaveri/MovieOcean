@@ -49,8 +49,8 @@ public class MoviePosterAdapter extends Adapter<ViewHolder> {
          MoviePosterAdapter.MoviePosterViewHolder holder = (MoviePosterAdapter.MoviePosterViewHolder) viewHolder;
 
          MovieModel movieModel = arrMovies.get(position);
-        holder.txtMovieName.setText(movieModel.getMovieTitle());
-        //BitmapUtils.setUrlImageUsingPicasso(mContext, movieModel.getMoviewPosterUl(), holder.ivMoviePoster);
+        holder.txtMovieName.setText(movieModel.getTitle());
+        ocean.movie.com.movieocean.utils.BitmapUtils.setUrlImageUsingPicasso(mContext, movieModel.getPoster_path(), holder.ivMoviePoster);
         holder.cvContent.setOnClickListener(new NextActivityListener(movieModel));
     }
 

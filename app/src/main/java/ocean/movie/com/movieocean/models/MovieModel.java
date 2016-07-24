@@ -5,58 +5,112 @@ package ocean.movie.com.movieocean.models;
  */
 public class MovieModel implements java.io.Serializable{
 
-    private String movieTitle;
-    private float movieRating;
-    private String moviewPosterUl;
-    private String synopsis;
-    private String userRating;
-    private String releaseDate;
+    private String poster_path;
+    private boolean adult;
+    private String overview;
+    private String release_date;
+    private String id;
+    private String original_title;
+    private String title;
+    private String backdrop_path;
+    private float popularity;
+    private int vote_count;
+    private boolean video;
+    private float vote_average;
 
-    public String getMovieTitle() {
-        return movieTitle;
+    public String getPoster_path() {
+        return poster_path;
     }
 
-    public void setMovieTitle(String movieTitle) {
-        this.movieTitle = movieTitle;
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 
-    public float getMovieRating() {
-        return movieRating;
+    public boolean isAdult() {
+        return adult;
     }
 
-    public void setMovieRating(float movieRating) {
-        this.movieRating = movieRating;
+    public void setAdult(boolean adult) {
+        this.adult = adult;
     }
 
-    public String getMoviewPosterUl() {
-        return moviewPosterUl;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setMoviewPosterUl(String moviewPosterUl) {
-        this.moviewPosterUl = moviewPosterUl;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
-    public String getSynopsis() {
-        return synopsis;
+    public String getRelease_date() {
+        return release_date;
     }
 
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
     }
 
-    public String getUserRating() {
-        return userRating;
+    public String getId() {
+        return id;
     }
 
-    public void setUserRating(String userRating) {
-        this.userRating = userRating;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
+    public String getOriginal_title() {
+        return original_title;
     }
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setOriginal_title(String original_title) {
+        this.original_title = original_title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
+    }
+
+    public float getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(float popularity) {
+        this.popularity = popularity;
+    }
+
+    public int getVote_count() {
+        return vote_count;
+    }
+
+    public void setVote_count(int vote_count) {
+        this.vote_count = vote_count;
+    }
+
+    public boolean isVideo() {
+        return video;
+    }
+
+    public void setVideo(boolean video) {
+        this.video = video;
+    }
+
+    public float getVote_average() {
+        return vote_average;
+    }
+
+    public void setVote_average(float vote_average) {
+        this.vote_average = vote_average;
     }
 }

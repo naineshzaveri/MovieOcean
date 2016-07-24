@@ -15,6 +15,7 @@
         <item name="android:textColor">@color/color_primary_text</item>
         <item name="android:textSize">@dimen/text_large</item>
         <item name="android:padding">@dimen/pad_10dp</item>
+        <item name="android:gravity">left|center</item>
     </style>
 
 

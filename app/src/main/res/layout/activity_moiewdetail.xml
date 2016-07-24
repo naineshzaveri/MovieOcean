@@ -26,7 +26,7 @@
                 android:id="@+id/ivMovieImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/pad_100dp"
-                android:background="@drawable/ic_launcher"/>
+               />
 
             <View
                 android:layout_width="match_parent"

@@ -20,6 +20,6 @@
 
     <!-- movie detail -->
     <string name="user_rating">User Rating :</string>
-    <string name="synopsis">Synopsis :</string>
+    <string name="synopsis">Synopsis</string>
     <string name="release_date">Release Date :</string>
 </resources>

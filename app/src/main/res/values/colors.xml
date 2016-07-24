@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">#0F906D</color>
+    <color name="color_primary_dark">#129178</color>
+    <color name="color_primary_text">#666666</color>
+    <color name="color_secondary_text">#999</color>
+    <color name="color_divider">#f2f2f2</color>
+    <color name="color_grey">#f2f2f2</color>
+    <color name="color_grey_indicator">#E4E4E4</color>
+    <color name="color_light_grey">#E0E0E0</color>
+    <color name="status_bar_color">#017858</color>
+
+    <color name="hint_color">#C0C0C0</color>
+
+    <color name="status_line">#edeced</color>
+    <color name="action_bar_color">#F9F9F9</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

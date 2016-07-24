@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- HDPI -->
+
+    <dimen name="width_circular_profile">50dp</dimen>
+
+
+    <!-- Padding -->
+
+    <dimen name="pad_5dp">5dp</dimen>
+    <dimen name="pad_10dp">10dp</dimen>
+    <dimen name="pad_15dp">15dp</dimen>
+    <dimen name="pad_30dp">30dp</dimen>
+    <dimen name="pad_35dp">35dp</dimen>
+    <dimen name="pad_20dp">20dp</dimen>
+    <dimen name="pad_25dp">25dp</dimen>
+    <dimen name="pad_50dp">50dp</dimen>
+    <dimen name="pad_60dp">60dp</dimen>
+    <dimen name="card_margin_horizontal">-3dp</dimen>
+
+    <dimen name="dimen_group_icon">50dp</dimen>
+
+    <dimen name="dimen_thumb">110dp</dimen>
+
+    <dimen name="dimen_nav_drawer">260dp</dimen>
+</resources>

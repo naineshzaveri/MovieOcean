@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- HDPI -->
+
+    <dimen name="width_circular_profile">60dp</dimen>
+
+
+    <!-- Padding -->
+    <dimen name="pad_2dp">2dp</dimen>
+    <dimen name="pad_5dp">5dp</dimen>
+    <dimen name="pad_7dp">7dp</dimen>
+    <dimen name="pad_8dp">8dp</dimen>
+    <dimen name="pad_10dp">10dp</dimen>
+    <dimen name="pad_12dp">12dp</dimen>
+    <dimen name="pad_15dp">15dp</dimen>
+    <dimen name="pad_30dp">30dp</dimen>
+    <dimen name="pad_50dp">50dp</dimen>
+    <dimen name="pad_40dp">40dp</dimen>
+    <dimen name="pad_60dp">60dp</dimen>
+    <dimen name="pad_45dp">45dp</dimen>
+    <dimen name="pad_25dp">25dp</dimen>
+    <dimen name="pad_20dp">20dp</dimen>
+    <dimen name="card_margin_horizontal">-3dp</dimen>
+
+    <dimen name="dimen_group_icon">60dp</dimen>
+    
+    <dimen name="dimen_thumb">120dp</dimen>
+    
+    <dimen name="dimen_nav_drawer">280dp</dimen>
+
+    <!-- Textual Sizes -->
+
+    <dimen name="text_xtra_xtra_small">10sp</dimen>
+    <dimen name="text_xtra_small">12sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xtra_large">20sp</dimen>
+    <dimen name="text_xtra_xtra_large">25sp</dimen>
+
+</resources>

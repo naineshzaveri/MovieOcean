@@ -9,13 +9,8 @@ private ocean.movie.com.movieocean.models.MovieModel movieModel;
         super.onCreate(savedInstanceState);
         setContentView(ocean.movie.com.movieocean.R.layout.activity_moiewdetail);
 
-        init();
         getBundleValues();
         setMovieData();
-
-    }
-
-    private void init(){
 
     }
 

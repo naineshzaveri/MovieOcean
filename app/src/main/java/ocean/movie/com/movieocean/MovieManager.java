@@ -76,32 +76,7 @@ public class MovieManager implements com.android.volley.Response.Listener, com.a
                 "&"+ ocean.movie.com.movieocean.helper.WebHelper.HeaderParams.SORT_BY + "="+ocean.movie.com.movieocean.helper.WebHelper.PARAMS_VALUE.SORT_BY_POPULARITY;
 
         com.android.volley.toolbox.StringRequest strReq = new com.android.volley.toolbox.StringRequest(com.android.volley.Request.Method.GET,
-                MOVIEW_URL, new com.android.volley.Response.Listener<String>() {
-
-            @Override
-            public void onResponse(String response) {
-                android.util.Log.d(TAG, response.toString());
-                com.google.gson.Gson gson = new com.google.gson.Gson();
-                if(movieValueListener != null){
-                    movieValueListener.onReturnMovieList(gson.fromJson(response, ocean.movie.com.movieocean.models.MovieResponseModel.class).getResults());
-                }
-            }
-        }, new com.android.volley.Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(com.android.volley.VolleyError error) {
-
-                if(movieValueListener != null){
-                    movieValueListener.onReturnError(error);
-                }
-            }
-        }) {
-            @Override
-            public Priority getPriority() {
-                return priority;
-            }
-
-        };
+                MOVIEW_URL, this,this);
         // Adding request to request queue
         ocean.movie.com.movieocean.MovieOcean.getInstance().addToRequestQueue(strReq, TAG);
     }

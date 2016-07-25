@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import ocean.movie.com.movieocean.R;
 import ocean.movie.com.movieocean.models.MovieModel;
 
+;
+
 /**
  * Created by naineshzaveri on 23/07/16.
  */
@@ -50,7 +52,7 @@ public class MoviePosterAdapter extends Adapter<ViewHolder> {
          MoviePosterAdapter.MoviePosterViewHolder holder = (MoviePosterAdapter.MoviePosterViewHolder) viewHolder;
          MovieModel movieModel = arrMovies.get(position);
         holder.txtMovieName.setText(movieModel.getTitle());
-        ocean.movie.com.movieocean.utils.BitmapUtils.setUrlImageUsingPicasso(mContext, movieModel.getPoster_path(), holder.ivMoviePoster,holder.progressBar);
+       ocean.movie.com.movieocean.utils.BitmapUtils.setUrlImageUsingPicasso(mContext, movieModel.getPoster_path(), holder.ivMoviePoster, holder.progressBar);
         holder.cvContent.setOnClickListener(new NextActivityListener(movieModel));
     }
 

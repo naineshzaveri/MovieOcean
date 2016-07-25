@@ -23,5 +23,11 @@ public interface WebHelper {
 
     public interface HeaderParams {
         String ACCEPT = "accept";
+        String SORT_BY = "sort_by";
+    }
+    public interface  PARAMS_VALUE{
+        String SORT_BY_POPULARITY = "popularity.desc";
+        String SORT_BY_HIGEST_RATING = "vote_count.desc";
+
     }
 }

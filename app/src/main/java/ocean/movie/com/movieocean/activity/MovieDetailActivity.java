@@ -11,7 +11,6 @@ private ocean.movie.com.movieocean.models.MovieModel movieModel;
 
         getBundleValues();
         setMovieData();
-
     }
 
     private void getBundleValues(){

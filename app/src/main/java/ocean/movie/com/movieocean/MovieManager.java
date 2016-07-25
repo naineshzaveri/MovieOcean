@@ -5,18 +5,9 @@ import ocean.movie.com.movieocean.models.MovieModel;
 /**
  * Created by naineshzaveri on 24/07/16.
  */
-public class MovieManager implements com.android.volley.Response.Listener, com.android.volley.Response.ErrorListener {
+public class MovieManager {
     private static String TAG = MovieManager.class.getName();
     com.android.volley.Request.Priority priority = com.android.volley.Request.Priority.HIGH;
-    @Override
-    public void onErrorResponse(com.android.volley.VolleyError volleyError) {
-
-    }
-
-    @Override
-    public void onResponse(Object o) {
-
-    }
 
     public interface MovieValueListener {
 
